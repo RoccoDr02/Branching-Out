@@ -2,6 +2,7 @@ import json
 
 
 def filter_users_by_name(name):
+    """Filters users by name and prints them to the console."""
     with open("users.json", "r") as file:
         users = json.load(file)
 
@@ -12,6 +13,7 @@ def filter_users_by_name(name):
 
 
 def filter_users_by_age(age):
+    """Filters users by age and prints them to the console."""
     with open("users.json", "r") as file:
         users = json.load(file)
 
@@ -22,12 +24,13 @@ def filter_users_by_age(age):
 
 
 def filter_by_email(email):
+    """Filters users by email and prints them to the console."""
     with open("users.json", "r") as file:
         users = json.load(file)
 
-    filtered_users = [user for user in users if user.get("email") == email.lower()]
+    filtered_users = [user for user in users if user.get("email","").lower() == email.lower()]
 
-    for user in filtered_users
+    for user in filtered_users:
         print(user)
 
 
